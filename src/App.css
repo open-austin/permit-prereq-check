@@ -110,3 +110,56 @@ ul.permit-list li + li {
     margin-left: 1em;
   }
 }
+
+.review-form-columns {
+}
+
+.review-form-columns section + section {
+  margin-top: 1em;
+}
+
+@media(min-width: 700px) {
+  .review-form-columns {
+    display: flex;
+  }
+
+  .review-form-columns section {
+    flex-basis: 0;
+    flex-grow: 1;
+  }
+
+  .review-form-columns section + section {
+    margin-top: 0;
+    margin-left: 1em;
+  }
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: .25em;
+}
+
+.form-group input {
+  display: block;
+  width: 100%;
+}
+
+.form-group input[type="text"] {
+  height: 30px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-shadow: inset 0px 2px 2px 0px #ccc;
+}
+
+.form-group + .form-group {
+  margin-top: 1em;
+}
+
+.map {
+  display: flex;
+  height: 300px;
+  background-color: #ccc;
+  justify-content: center;
+  align-items: center;
+}
