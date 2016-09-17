@@ -4,6 +4,7 @@
 
 body {
   font-family: sans-serif;
+  background-color: #f9fbff;
 }
 
 .container {
@@ -40,7 +41,7 @@ nav ul li:after {
   width: 15px;
   height: 15px;
   content: '';
-  background-color: #fff;
+  background-color: #f9fbff;
   border-radius: 15px;
   left: 0;
   right: 0;
@@ -59,7 +60,7 @@ nav ul li + li {
 
 nav ul li > a {
   display: inline-block;
-  padding: 2em 0;
+  padding: 1.5em 0;
   color: #666;
   text-decoration: none;
   font-weight: bold;
@@ -75,28 +76,45 @@ nav ul li > a:hover {
 }
 
 .btn {
-  min-width: 200px;
+  display: block;
+  width: 100%;
   padding: 1em 2em;
-  background-color: #666;
+  background-color: #7ed321;
   border-radius: 3px;
   border: none;
   color: #fff;
+  font-weight: bold;
   transition: background-color .1s ease-in-out;
 }
 
 .btn:hover {
-  background-color: #333;
+  background-color: #6eb91c;
   cursor: pointer;
 }
 
 a {
-  color: #0074D9
+  color: #abaaab;
 }
 
 a:hover {
-  color: #085ca4;
+  color: #9a9a9a;
 }
 
+p {
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  color: #5c5b5c;
+}
+
+h2 {
+  text-align: center;
+  color: #5c5b5c;
+  font-weight: normal;
+  font-size: 20px;
+}
 ul.permit-list {
   margin: 0;
   padding: 0;
@@ -189,4 +207,13 @@ ul.permit-list li + li {
   background-color: #ccc;
   justify-content: center;
   align-items: center;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.lead {
+  margin-bottom: 5em;
 }
