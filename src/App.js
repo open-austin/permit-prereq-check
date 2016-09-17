@@ -6,10 +6,19 @@ import NavBar from './components/nav-bar';
 import ReviewForm from './components/review-form';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { activeTab: 'welcome' };
+  }
+
+  setActiveTab = (activeTab) => {
+    this.setState({ activeTab });
+  }
+
   render() {
     return (
       <div className="App">
-        <NavBar/>
+        <NavBar activeTab={this.state.activeTab} setActiveTab={this.setActiveTab}/>
         <ReviewForm/>
       </div>
     );
