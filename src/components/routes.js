@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Router, Route, browserHistory, IndexRoute } from 'react-router';
+import { Router, Route, hashHistory, IndexRoute } from 'react-router';
 import App from '../App';
 import Homepage from './homepage';
 import ReviewForm from './review-form';
@@ -9,7 +9,7 @@ import NoMatch from './no-match';
 export default class Routes extends Component {
   render() {
     return (
-      <Router history={browserHistory}>
+      <Router history={hashHistory}>
         <Route path="/" component={App}>
           <IndexRoute component={Homepage}/>
           <Route path="location" component={ReviewForm}/>
