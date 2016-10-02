@@ -18,6 +18,12 @@ body {
   }
 }
 
+@media(min-width: 1050px) {
+  .container {
+    max-width: 1000px;
+  }
+}
+
 nav {
   background-color: #bfeb94;
 }
@@ -115,6 +121,13 @@ h2 {
   font-weight: normal;
   font-size: 20px;
 }
+
+@media(min-width: 700px) {
+  h1, h2 {
+    text-align: left;
+  }
+}
+
 ul.permit-list {
   margin: 0;
   padding: 0;
@@ -217,3 +230,16 @@ img {
 .lead {
   margin-bottom: 5em;
 }
+
+@media(min-width: 700px) {
+  .lead {
+    width: 60%;
+    display: inline-block;
+  }
+  .leadRight {
+    width: 40%;
+    margin-top: 8em;
+    float: right;
+  }
+}
+
