@@ -3,6 +3,11 @@ import { Link } from 'react-router';
 import logo from '../img/home-icon.png';
 
 export default class HomePage extends Component {
+  aboutOnClick = (e) => {
+    e.preventDefault();
+    this.props.setShowAbout(true);
+  }
+
   render() {
     return (
       <main>
@@ -16,7 +21,7 @@ export default class HomePage extends Component {
             <Link to={'/location'}>
               <button className="btn">Get Started</button>
             </Link>
-            <p><a href="#">About</a></p>
+            <p><a href="#" onClick={this.aboutOnClick}>About</a></p>
           </div>
         </div>
       </main>
