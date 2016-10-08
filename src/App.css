@@ -11,16 +11,10 @@ body {
   margin: 1em;
 }
 
-@media(min-width: 750px) {
+@media(min-width: 530px) {
   .container {
     margin: 0 auto;
-    max-width: 700px;
-  }
-}
-
-@media(min-width: 1050px) {
-  .container {
-    max-width: 1000px;
+    max-width: 500px;
   }
 }
 
@@ -82,24 +76,28 @@ nav ul li > a:hover {
 }
 
 .btn {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   padding: 1em 2em;
   background-color: #7ed321;
   border-radius: 3px;
   border: none;
   color: #fff;
+  font-size: 11px;
   font-weight: bold;
+  text-decoration: none;
   transition: background-color .1s ease-in-out;
+}
+
+.btn + .btn {
+  margin-top: 1em;
 }
 
 .btn:hover {
   background-color: #6eb91c;
   cursor: pointer;
-}
-
-.btn + .btn {
-  margin-top: 1em;
 }
 
 .btn-secondary {
@@ -110,6 +108,28 @@ nav ul li > a:hover {
 
 .btn-secondary:hover {
   background-color: #eee;
+}
+
+.btn-geolocate {
+  background-color: #4a90e2;
+}
+
+.btn-geolocate:hover {
+  background-color: #468ada;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-inline {
+  display: inline-block;
+}
+
+.btn-inline + .btn-inline {
+  margin-left: 1em;
+  margin-top: 0;
 }
 
 a {
@@ -136,11 +156,11 @@ h2 {
   font-size: 20px;
 }
 
-@media(min-width: 700px) {
+/*@media(min-width: 700px) {
   h1, h2 {
     text-align: left;
   }
-}
+}*/
 
 ul.permit-list {
   margin: 0;
@@ -218,10 +238,12 @@ ul.permit-list li + li {
 }
 
 .form-group input[type="text"] {
-  height: 30px;
+  /*height: 30px;*/
+  padding: 1em;
   border: 1px solid #ccc;
   border-radius: 3px;
-  box-shadow: inset 0px 2px 2px 0px #ccc;
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .form-group + .form-group {
@@ -248,10 +270,12 @@ img {
 @media(min-width: 700px) {
   .lead {
     width: 60%;
+    padding: 1em;
     display: inline-block;
   }
   .leadRight {
     width: 40%;
+    padding: 1em;
     margin-top: 8em;
     float: right;
   }
@@ -302,4 +326,16 @@ img {
   .modal {
     width: 30%;
   }
+}
+
+.icon-geolocate {
+  display: inline-block;
+  max-width: 20px;
+  margin-left: 1em;
+}
+
+.logo {
+  display: block;
+  margin: 3em auto;
+  max-width: 300px;
 }

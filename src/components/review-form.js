@@ -1,17 +1,28 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
+import geolocateIcon from '../img/geolocate_icon.png';
 
 export default class ReviewForm extends Component {
+  aboutOnClick = (e) => {
+    e.preventDefault();
+    this.props.setShowAbout(true);
+  }
+
   render() {
     return (
       <main>
         <div className="container">
-          <h1>Permit Review Check</h1>
+          <h2>Enter the project address</h2>
           <div className="review-form-columns">
             <section>
-              <h2>Project Address</h2>
               <div className="form-group">
-                <label htmlFor="street-number">Street Number</label>
-                <input id="street-number" type="text"/>
+                <button className="btn btn-geolocate">Use Current Location
+                  <img alt="geolocate icon" src={geolocateIcon} className="icon-geolocate"/>
+                </button>
+              </div>
+              <div className="form-group">
+                <label htmlFor="address">Address</label>
+                <input id="address" type="text"/>
               </div>
               <div className="form-group">
                 <label htmlFor="street-name">Street Name</label>
@@ -26,18 +37,17 @@ export default class ReviewForm extends Component {
                 <input id="zip" type="text"/>
               </div>
               <div className="form-group">
-                <label htmlFor="city-state">City, State</label>
-                <div>Austin, TX</div>
+                <h2>Austin, TX</h2>
               </div>
               <p>
-                <button className="btn">Run Check</button>
+                <div className="btn-group">
+                  <Link to={'/'} className="btn btn-inline btn-secondary">
+                    Back
+                  </Link>
+                  <button className="btn btn-inline">Submit</button>
+                </div>
               </p>
-            </section>
-            <section>
-              <div className="map">
-                <p>Map Here</p>
-              </div>
-              <p><a href="#">Map not showing the correct location?</a></p>
+              <p><a href="#" onClick={this.aboutOnClick}>About</a></p>
             </section>
           </div>
         </div>
