@@ -3,7 +3,7 @@ import { Router, Route, hashHistory, IndexRoute } from 'react-router';
 import App from '../App';
 import Homepage from './homepage';
 import ReviewForm from './review-form';
-import ReviewCheck from './review-check';
+import Report from './report';
 import NoMatch from './no-match';
 
 export default class Routes extends Component {
@@ -13,7 +13,7 @@ export default class Routes extends Component {
         <Route path="/" component={App}>
           <IndexRoute component={Homepage}/>
           <Route path="location" component={ReviewForm}/>
-          <Route path="report" component={ReviewCheck}/>
+          <Route path="report" component={Report}/>
           <Route path="*" component={NoMatch}/>
         </Route>
       </Router>

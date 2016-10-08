@@ -8,7 +8,7 @@ body {
 }
 
 .container {
-  margin: 1em;
+  padding: 1em;
 }
 
 @media(min-width: 530px) {
@@ -88,6 +88,7 @@ nav ul li > a:hover {
   font-size: 11px;
   font-weight: bold;
   text-decoration: none;
+  text-align: center;
   transition: background-color .1s ease-in-out;
 }
 
@@ -98,6 +99,7 @@ nav ul li > a:hover {
 .btn:hover {
   background-color: #6eb91c;
   cursor: pointer;
+  color: #fff;
 }
 
 .btn-secondary {
@@ -108,6 +110,7 @@ nav ul li > a:hover {
 
 .btn-secondary:hover {
   background-color: #eee;
+  color: #666;
 }
 
 .btn-geolocate {
@@ -203,29 +206,6 @@ ul.permit-list li + li {
   }
 }
 
-.review-form-columns {
-}
-
-.review-form-columns section + section {
-  margin-top: 1em;
-}
-
-@media(min-width: 700px) {
-  .review-form-columns {
-    display: flex;
-  }
-
-  .review-form-columns section {
-    flex-basis: 0;
-    flex-grow: 1;
-  }
-
-  .review-form-columns section + section {
-    margin-top: 0;
-    margin-left: 1em;
-  }
-}
-
 .form-group label {
   display: block;
   font-size: 14px;
@@ -252,8 +232,9 @@ ul.permit-list li + li {
 
 .map {
   display: flex;
-  height: 300px;
-  background-color: #ccc;
+  height: 200px;
+  width: 100%;
+  background-color: #eee;
   justify-content: center;
   align-items: center;
 }
@@ -334,8 +315,56 @@ img {
   margin-left: 1em;
 }
 
+.icon-check {
+  display: inline-block;
+  max-width: 25px;
+  vertical-align: sub;
+  margin-right: 10px;
+}
+
+.icon-yield {
+  display: inline-block;
+  max-width: 35px;
+  vertical-align: sub;
+  margin-right: 10px;
+}
+
 .logo {
   display: block;
   margin: 3em auto;
   max-width: 300px;
+}
+
+section {
+  background-color: #fff;
+}
+
+.flex-between {
+  display: flex;
+  padding: 1em;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list-report {
+  list-style-type: none;
+  padding: 0;
+}
+
+.list-report li {
+  padding: 1em 0;
+}
+
+.list-report > li + li {
+  border-top: 1px solid #666;
+}
+
+.list-report h1,
+.list-report h2,
+.list-report p {
+  text-align: left!important;
+}
+
+ul {
+  padding-left: 1em;
 }
