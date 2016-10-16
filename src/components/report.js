@@ -3,6 +3,15 @@ import { Link } from 'react-router';
 import checkIcon from '../img/check_icon.png';
 import yieldIcon from '../img/yield_icon.png';
 
+function Address(props) {
+  const { address, suiteApt, zip } = props;
+
+  return <address>
+    {address}{suiteApt ? ', ' + suiteApt : ''}<br/>
+    Austin, TX {zip}
+  </address>
+}
+
 export default class Report extends Component {
   aboutOnClick = (e) => {
     e.preventDefault();
@@ -20,10 +29,7 @@ export default class Report extends Component {
             <div className="flex-between">
               <div>
                 <strong>Project Address</strong>
-                <address>
-                  12 Justin Lane, Apt 231<br/>
-                  Austin, TX 78704
-                </address>
+                <Address {...this.props}/>
               </div>
               <div>
                 <Link to={'/location'} className="btn">Edit location</Link>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import geolocateIcon from '../img/geolocate_icon.png';
+import { getAddress } from '../utils';
 
 export default class ReviewForm extends Component {
   aboutOnClick = (e) => {
@@ -8,31 +9,49 @@ export default class ReviewForm extends Component {
     this.props.setShowAbout(true);
   }
 
+  onAddressChange = (e) => this.props.setAddress(e.target.value);
+  onSuiteAptChange = (e) => this.props.setSuiteApt(e.target.value);
+  onZipChange = (e) => this.props.setZip(e.target.value);
+
+  geolocateOnClick = (e) => {
+    const { setAddress, setZip } = this.props;
+    getAddress(function success(address, zip) {
+      setAddress(address);
+      setZip(zip);
+    }, function fail(positionError) {
+      console.log(positionError);
+    });
+  }
   render() {
     return (
       <main>
         <div className="container">
           <h2>Enter the project address</h2>
           <div className="form-group">
-            <button className="btn btn-geolocate">Use Current Location
+            <button className="btn btn-geolocate" onClick={this.geolocateOnClick}>Use Current Location
               <img alt="geolocate icon" src={geolocateIcon} className="icon-geolocate"/>
             </button>
           </div>
           <div className="form-group">
             <label htmlFor="address">Address</label>
-            <input id="address" type="text"/>
-          </div>
-          <div className="form-group">
-            <label htmlFor="street-name">Street Name</label>
-            <input id="street-name" type="text"/>
+            <input id="address"
+                   type="text"
+                   onChange={this.onAddressChange}
+                   value={this.props.address}/>
           </div>
           <div className="form-group">
             <label htmlFor="street-suite-apt">Suite/Apartment Number</label>
-            <input id="street-suite-apt" type="text"/>
+            <input id="street-suite-apt"
+                   type="text"
+                   onChange={this.onSuiteAptChange}
+                   value={this.props.suiteApt}/>
           </div>
           <div className="form-group">
             <label htmlFor="zip">Zip Code</label>
-            <input id="zip" type="text"/>
+            <input id="zip"
+                   type="text"
+                   onChange={this.onZipChange}
+                   value={this.props.zip}/>
           </div>
           <div className="form-group">
             <h2>Austin, TX</h2>
