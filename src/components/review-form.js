@@ -14,12 +14,15 @@ export default class ReviewForm extends Component {
   onZipChange = (e) => this.props.setZip(e.target.value);
 
   geolocateOnClick = (e) => {
-    const { setAddress, setZip } = this.props;
+    const { setAddress, setZip, addLoader, removeLoader } = this.props;
+    addLoader();
     getAddress(function success(address, zip) {
       setAddress(address);
       setZip(zip);
+      removeLoader();
     }, function fail(positionError) {
       console.log(positionError);
+      removeLoader();
     });
   }
   render() {
